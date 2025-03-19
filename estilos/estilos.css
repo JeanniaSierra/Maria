@@ -1,0 +1,152 @@
+.btn-custom-usuarios{
+    background-color: #ee5bd5; /*color rosado*/
+    color:white;/*color blanco texto*/
+    font-family:´Courier 'Courier New', Courier, monospace;/*tipo de fuente*/
+}
+
+.btn-custom-usuarios:hover{
+    background-color: #b30045;/*color rosado oscuro al pasar el mouse*/
+}
+
+.btn-custom-productos{
+    background-color: #d43ac0;/*color verde*/
+    color:white;/*color blanco texto*/
+    font-family: ´Courier 'Courier New', Courier, monospace;/*tipo de fuente*/
+}
+
+.btn-custom-productos:hover{
+    background-color: #9b0575;
+}
+
+.btn-custom-pedidos{
+    background-color: #dc3545;/*color rojo*/
+    color:white;
+    font-family: ´Georgia´,serif;/*fuente*/
+}
+
+.btn-custom-pedidos:hover{
+    background-color: #c82333;/*color rojo al pasar el mouse*/
+}
+
+button{
+    background-color:plum;
+}
+
+.carousel-item img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho disponible dentro del item del carrusel */
+    height: 300px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Hace que la imagen cubra todo el espacio disponible dentro del contenedor */
+    object-position: center center; /* Centra la imagen dentro del contenedor */
+
+}
+
+.navbar-custom {
+    background-color: #343a40; /* Color de fondo */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #ffffff; /* Color del texto */
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #ffffff; /* Color del texto */
+    margin-right: 15px; /* Espacio entre enlaces */
+    font-size: 1.1rem; /* Tamaño de fuente */
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+    color: #d4d4d4; /* Color del texto al pasar el mouse */
+}
+
+.navbar-custom .btn {
+    margin-right: 10px; /* Espacio entre botones */
+    font-size: 1rem; /* Tamaño de fuente */
+    padding: 8px 15px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+}
+
+.navbar-custom .btn-outline-light {
+    color: #ffffff; /* Color del texto */
+    border-color: #ffffff; /* Color del borde */
+}
+
+.navbar-custom .btn-outline-light:hover {
+    background-color: #ffffff; /* Color de fondo al pasar el mouse */
+    color: #343a40; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para el botón Mi Perfil */
+.btn-custom-profile {
+    display: flex;
+    align-items: center;
+    background-color: #0d6efd;  /* Color de fondo */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 30px;  /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+
+.btn-custom-profile:hover {
+    background-color: #0056b3;  /* Color de fondo al pasar el mouse */
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;  /* Hace la imagen redonda */
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}
+
+.rounded-circle {
+    border: 3px solid #17a2b8;
+}
+        
+.modal-header.bg-info {
+    background-color: #17a2b8 !important;
+}
+        
+#verPerfilModal .modal-body p {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+        
+#verPerfilModal .modal-body strong {
+    color: #17a2b8;
+        }
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    display: none;
+}
+

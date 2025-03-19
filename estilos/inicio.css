@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../imagenes/imagensesion.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    position: relative;
+    width: 420px;
+    min-height: 480px;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.form-container form {
+    width: 100%;
+    background: rgba(255, 192, 203, 0.3); /* Pink transparente */
+    border: 2px solid rgba(255, 105, 180, 0.4); /* Hot Pink transparente */
+    backdrop-filter: blur(20px);
+    color: #FFF0F5; /* Lavender Blush */
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.form-container h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #FF1493; /* Deep Pink */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #FFB6C1; /* Light Pink */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #FFF0F5; /* Lavender Blush */
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #FFE4E1; /* Misty Rose */
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #FF69B4; /* Hot Pink */
+}
+
+.remember-forgot label input {
+    accent-color: #FF69B4; /* Hot Pink */
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #DB7093; /* Pale Violet Red */
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    color: #FF69B4; /* Hot Pink */
+    text-decoration: underline;
+}
+
+.form-container button {
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to right, #FF69B4, #FF1493); /* Hot Pink a Deep Pink */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    cursor: pointer;
+    font-size: 16px;
+    color: #FFF0F5; /* Lavender Blush */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+    background: linear-gradient(to right, #FF1493, #C71585); /* Deep Pink a Medium Violet Red */
+    transform: scale(1.02);
+}
+
+.register-link p,
+.login-link p {
+    color: #FFB6C1; /* Light Pink */
+}
+
+/* Botones ghost */
+.ghost {
+    background: transparent !important;
+    border: 2px solid #FFB6C1 !important; /* Light Pink */
+    color: #FFB6C1 !important; /* Light Pink */
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.ghost:hover {
+    background: rgba(255, 182, 193, 0.2) !important; /* Light Pink transparente */
+    border-color: #FF69B4 !important; /* Hot Pink */
+    color: #FF69B4 !important; /* Hot Pink */
+    transform: scale(1.05);
+}
+
+#message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+#message.success {
+    color: #FF69B4; /* Hot Pink para éxito */
+}
+
+#message.error {
+    color: #C71585; /* Medium Violet Red para error */
+}
+
+/* Efectos adicionales */
+.input-box input:focus {
+    border-color: #FF69B4; /* Hot Pink */
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+}
+
+.form-container {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+/* Mantener el resto de las clases de transición igual */
+.login-container {
+    left: 0;
+    z-index: 2;
+}
+
+.register-container {
+    left: 100%;
+    z-index: 1;
+}
+
+.container.right-panel-active .login-container {
+    transform: translateX(-100%);
+}
+
+.container.right-panel-active .register-container {
+    transform: translateX(-100%);
+    z-index: 5;
+}
+
