@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+session_start(); // Asegura que la sesión está iniciada
+$rol_usuario = $_SESSION['rol_usuario'] ?? ''; // Obtiene el rol o vacío si no existe
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +32,9 @@
                         Proveedor
                     </button>
                     <ul class="dropdown-menu">
+                    <?php if ($rol_usuario === 'Administrador' || $rol_usuario === 'Vendedor'): ?>
                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#crearProveedorModal">Crear Proveedor</a></li>
+                        <?php endif; ?>
                         <li><a class="dropdown-item" href="listar_proveedores.html" id="btnVerProveedor">Ver Proveedor</a></li>
                     </ul>
                 </div>
@@ -37,7 +44,9 @@
                         Categoria
                     </button>
                     <ul class="dropdown-menu">
+                    <?php if ($rol_usuario === 'Administrador' || $rol_usuario === 'Vendedor'): ?>
                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#crearCategoriaModal">Crear Categoria</a></li>
+                        <?php endif; ?>
                         <li><a class="dropdown-item" href="listar_categorias.html">Ver Categoria</a></li>
                     </ul>
                 </div>
@@ -47,7 +56,9 @@
                         Producto
                     </button>
                     <ul class="dropdown-menu">
+                    <?php if ($rol_usuario === 'Administrador' || $rol_usuario === 'Vendedor'): ?>
                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#crearProductoModal">Crear Producto</a></li>
+                        <?php endif; ?>
                         <li><a class="dropdown-item" href="listar_productos.php">Ver Producto</a></li>
                     </ul>
                 </div>

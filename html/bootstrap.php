@@ -1,6 +1,5 @@
 <!-- include -->
-<?php include '../html/navbar.php'; ?>
-
+<?php include '../html/navbar.php';?>
 <!-- Modal para Ver Perfil -->
 <div class="modal fade" id="verPerfilModal" tabindex="-1" aria-labelledby="verPerfilModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -62,6 +61,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Modal para Crear Categoria -->
 <div class="modal fade" id="crearCategoriaModal" tabindex="-1" aria-labelledby="crearCategoriaModalLabel" aria-hidden="true">
@@ -157,6 +157,7 @@
 </div>
 
 
+
 <!-- Carrusel de Productos -->
 <div id="productCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -186,6 +187,7 @@
     </button>
 </div>
 
+
 <section id="alejandra-pizarnik" class="bg-light py-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -207,7 +209,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="../imagenes/imagenvision" class="d-block w-100" alt="Nuestra visión"> <!-- Agrega la extensión correcta -->
+                <img src="../imagenes/imagenvision.png" class="d-block w-100" alt="Nuestra visión"> <!-- Agrega la extensión correcta -->
                 <p>Nuestra visión:...</p>
             </div>
             <div class="col-md-6">
