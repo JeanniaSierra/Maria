@@ -150,3 +150,128 @@ button{
     display: none;
 }
 
+/* Estilos para modo oscuro */
+.modo-oscuro {
+    background-color: #121212 !important; /* Fondo oscuro */
+    color: white !important; /* Texto blanco */
+}
+
+.modo-oscuro .navbar,
+.modo-oscuro .navbar-custom {
+    background-color: #252525 !important; /* Fondo oscuro para la barra de navegación */
+    color: white !important;
+}
+
+.modo-oscuro .navbar-brand, 
+.modo-oscuro .nav-link, 
+.modo-oscuro .dropdown-toggle {
+    color: white !important; /* Texto blanco */
+}
+
+.modo-oscuro .card, 
+.modo-oscuro .modal-content, 
+.modo-oscuro .dropdown-menu {
+    background-color: #1e1e1e !important; /* Fondo oscuro para tarjetas, modales y menús desplegables */
+    color: white !important;
+}
+
+.modo-oscuro .dropdown-item {
+    color: white !important; /* Texto blanco en los elementos del menú desplegable */
+}
+
+.modo-oscuro .dropdown-item:hover {
+    background-color: #333 !important; /* Fondo más oscuro al pasar el mouse */
+}
+
+.modo-oscuro .btn-custom-usuarios,
+.modo-oscuro .btn-custom-productos,
+.modo-oscuro .btn-custom-pedidos,
+.modo-oscuro .btn-custom-profile {
+    background-color: #333 !important; /* Fondo oscuro para botones personalizados */
+    color: white !important;
+    border-color: #444 !important;
+}
+
+.modo-oscuro table {
+    color: white !important; /* Texto blanco en tablas */
+}
+
+.modo-oscuro .table {
+    --bs-table-bg: #1e1e1e; /* Fondo oscuro para tablas */
+    --bs-table-striped-bg: #252525; /* Fondo oscuro para filas alternas */
+    color: white !important;
+}
+
+/* Transiciones para un cambio suave */
+body, .navbar, .card, .modal-content, .dropdown-menu, .btn, table {
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de color */
+}
+
+/* Asegúrate de que el fondo y el texto del cuerpo cambien correctamente */
+body.modo-oscuro {
+    background-color: #121212 !important; /* Fondo oscuro */
+    color: white !important; /* Texto blanco */
+}
+
+/* Asegúrate de que todos los elementos hereden correctamente los colores */
+body.modo-oscuro * {
+    background-color: transparent !important; /* Fondo transparente para evitar conflictos */
+    color: inherit !important; /* Hereda el color del texto */
+}
+
+/* Ajusta los estilos de elementos específicos si es necesario */
+body.modo-oscuro a {
+    color: #1e90ff !important; /* Color azul claro para enlaces */
+}
+
+body.modo-oscuro a:hover {
+    color: #87cefa !important; /* Color más claro al pasar el mouse */
+}
+
+/* Asegúrate de que las tablas también cambien correctamente */
+body.modo-oscuro table {
+    background-color: #1e1e1e !important; /* Fondo oscuro para tablas */
+    color: white !important; /* Texto blanco */
+}
+
+/* Ajusta los estilos de botones en modo oscuro */
+body.modo-oscuro button {
+    background-color: #333 !important; /* Fondo oscuro */
+    color: white !important; /* Texto blanco */
+    border-color: #444 !important; /* Borde oscuro */
+}
+
+/* Ajusta los estilos de la barra de navegación */
+body.modo-oscuro .navbar,
+body.modo-oscuro .navbar-custom {
+    background-color: #252525 !important; /* Fondo oscuro */
+    color: white !important; /* Texto blanco */
+}
+
+/* Ajusta los estilos de tarjetas, modales y menús desplegables */
+body.modo-oscuro .card,
+body.modo-oscuro .modal-content,
+body.modo-oscuro .dropdown-menu {
+    background-color: #1e1e1e !important; /* Fondo oscuro */
+    color: white !important; /* Texto blanco */
+}
+
+/* Ajusta los estilos de los elementos del menú desplegable */
+body.modo-oscuro .dropdown-item {
+    color: white !important; /* Texto blanco */
+}
+
+body.modo-oscuro .dropdown-item:hover {
+    background-color: #333 !important; /* Fondo más oscuro al pasar el mouse */
+}
+
+/* Transiciones para un cambio suave */
+body, .navbar, .card, .modal-content, .dropdown-menu, .btn, table {
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de color */
+}
+
+/* Asegurarse de que el fondo del cuerpo siempre se actualice */
+body.modo-oscuro {
+    background-color: #121212 !important;
+    color: white !important;
+}

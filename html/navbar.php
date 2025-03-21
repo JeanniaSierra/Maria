@@ -27,6 +27,10 @@ $rol_usuario = $_SESSION['rol_usuario'] ?? ''; // Obtiene el rol o vacío si no 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <!-- Eliminar enlaces innecesarios -->
                 </ul>
+
+                    
+                <button id="modoOscuroBtn" class="btn btn-dark">🌙 Modo Oscuro</button>
+
                 <div class="dropdown">
                     <button class="btn-custom-usuarios dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Proveedor
@@ -77,5 +81,47 @@ $rol_usuario = $_SESSION['rol_usuario'] ?? ''; // Obtiene el rol o vacío si no 
             </div>
         </div>
     </nav>
+    <script> 
+    // Obtiene los elementos del body y el botón del modo oscuro
+    const body = document.body;
+    const btnModoOscuro = document.getElementById("modoOscuroBtn");
+
+    // Función para activar el modo oscuro
+    function aplicarModoOscuro() {
+        body.classList.add("modo-oscuro");
+        btnModoOscuro.classList.remove("btn-dark");
+        btnModoOscuro.classList.add("btn-light");
+        btnModoOscuro.innerHTML = "☀️ Modo Claro";
+        localStorage.setItem("modo", "oscuro");
+        console.log("Modo oscuro aplicado y guardado en localStorage.");
+    }
+
+    // Función para activar el modo claro
+    function aplicarModoClaro() {
+        body.classList.remove("modo-oscuro");
+        btnModoOscuro.classList.remove("btn-light");
+        btnModoOscuro.classList.add("btn-dark");
+        btnModoOscuro.innerHTML = "🌙 Modo Oscuro";
+        localStorage.setItem("modo", "claro");
+        console.log("Modo claro aplicado y guardado en localStorage.");
+    }
+
+    // Comprobar si hay una preferencia guardada
+    if (localStorage.getItem("modo") === "oscuro") {
+        aplicarModoOscuro();
+    } else {
+        aplicarModoClaro();
+    }
+
+    // Evento para cambiar de modo cuando se hace clic en el botón
+    btnModoOscuro.onclick = function () {
+        if (body.classList.contains("modo-oscuro")) {
+            aplicarModoClaro();
+        } else {
+            aplicarModoOscuro();
+        }
+    };
+
+    </script>
 </body>
 </html>

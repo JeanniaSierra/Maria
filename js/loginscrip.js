@@ -269,3 +269,4 @@ function guardarCambios() {
     document.getElementById('btnEditar').style.display = 'inline-block';
     document.getElementById('btnGuardar').style.display = 'none';
 }
+

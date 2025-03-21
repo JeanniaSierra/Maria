@@ -103,15 +103,17 @@
             <div class="modal-body">
                 <form id="formCrearProducto" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="idCategoria" class="form-label">ID de Categoria</label>
+                        <label for="idCategoria" class="form-label">Categoría</label>
                         <select class="form-control" id="idCategoria" name="idCategoria" required>
                             <option value="">Seleccione una categoría</option>
+                            <!-- Opciones dinámicas -->
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="idProveedor" class="form-label">ID de Proveedor</label>
+                        <label for="idProveedor" class="form-label">Proveedor</label>
                         <select class="form-control" id="idProveedor" name="idProveedor" required>
                             <option value="">Seleccione un proveedor</option>
+                            <!-- Opciones dinámicas -->
                         </select>
                     </div>
                     <div class="mb-3">
@@ -124,7 +126,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="descripcionProducto" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="descripcionProducto" name="descripcionProducto"></textarea>
+                        <textarea class="form-control" id="descripcionProducto" name="descripcionProducto" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="precioProducto" class="form-label">Precio</label>
@@ -150,7 +152,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="btnGuardarProducto" onclick="guardarProducto()">Guardar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardarProducto" onclick="guardarProducto(event)">Guardar Producto</button>
             </div>
         </div>
     </div>

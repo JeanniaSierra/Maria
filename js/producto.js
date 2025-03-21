@@ -64,13 +64,13 @@ function guardarProducto(event) {
         'nombreProducto',
         'descripcionProducto',
         'precioProducto',
+        'cantidadProducto', // Agregado para validar cantidad_producto
         'idCategoria',
         'idProveedor'
     ];
 
     for (const campo of camposObligatorios) {
         const valor = formData.get(campo);
-        console.log(`Valor de ${campo}:`, valor); // Depuración
         if (!valor || valor.trim() === '') {
             alert(`Por favor complete el campo obligatorio: ${campo}`);
             return;
@@ -83,20 +83,14 @@ function guardarProducto(event) {
         method: 'POST',
         body: formData
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`Error en la respuesta del servidor: ${response.status} ${response.statusText}`);
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
         if (data.success) {
             alert('Producto guardado correctamente');
             form.reset();
-            cargarProductos();
+            cargarProductos(); // Recargar la lista de productos
         } else {
             alert(`Error al guardar el producto: ${data.message}`);
-            console.error('Error del servidor:', data.message);
         }
     })
     .catch(error => {
@@ -149,6 +143,7 @@ function cargarProductos() {
 
 // Llamar a la función de cargar productos cuando se carga la página
 window.onload = function() {
+    cargarCategoriasYProveedores();
     cargarProductos();
 };
 
@@ -214,14 +209,8 @@ function eliminarProducto(id) {
     });
 }
 
-// Llamar a la función de cargar categorías y proveedores cuando se carga la página
-window.onload = function() {
-    cargarCategoriasYProveedores();
-    cargarProductos();
-};
-
 document.addEventListener('DOMContentLoaded', function () {
-    const tbody = document.getElementById('tablaProductos'); // Asegúrate de que el ID sea correcto
+    const tbody = document.getElementById('listaProductos'); // Asegúrate de que el ID sea correcto
 
     if (!tbody) {
         console.error('Elemento tbody no encontrado. Asegúrate de que el elemento con ID "tablaProductos" exista en el HTML.');
