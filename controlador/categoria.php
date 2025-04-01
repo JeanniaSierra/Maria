@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'conexion.php'; // Asegúrate de que la conexión se establezca correctamente
+include '../config/conexion.php'; // Asegúrate de que la conexión se establezca correctamente
 
 // Leer el cuerpo de la solicitud como JSON
 $data = json_decode(file_get_contents('php://input'));

@@ -9,7 +9,7 @@ error_log("Solicitud recibida en usuario1.php");
 error_log("POST data: " . print_r($_POST, true));
 
 // Incluir archivo de conexión
-require_once 'conexion.php';
+require_once '../config/conexion.php';
 
 // Verificar si la conexión está establecida
 if (!isset($pdo)) {

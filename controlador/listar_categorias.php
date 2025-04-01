@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
+include '../config/conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
 
 try {
     $sql = "SELECT id_categoria, nombre_categoria, descripcion_categoria FROM Categoria"; // Incluye id_categoria

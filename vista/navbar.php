@@ -9,7 +9,7 @@ $rol_usuario = $_SESSION['rol_usuario'] ?? ''; // Obtiene el rol o vacío si no 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="../publico/estilos/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="imagenes/imagen1.png" type="image/x-icon">
 </head>
@@ -70,7 +70,7 @@ $rol_usuario = $_SESSION['rol_usuario'] ?? ''; // Obtiene el rol o vacío si no 
                 <!-- Aquí agregamos el botón "Mi Perfil" -->
                 <div class="dropdown">
                     <button class="btn btn-custom-profile dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../imagenes/alejandrafotoperfil.png" class="profile-img" alt="Foto de perfil">
+                        <img src="../publico/imagenes/alejandrafotoperfil.png" class="profile-img" alt="Foto de perfil">
                         <span class="username">Usuario</span>
                     </button>
                     <ul class="dropdown-menu">

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
+include '../config/conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
 
 // Verifica si se recibió una solicitud POST para guardar un proveedor
 $data = json_decode(file_get_contents("php://input"));

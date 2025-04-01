@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-require_once('conexion.php');
+require_once('../config/conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_usuario = $_SESSION['usuario_id'];

@@ -1,6 +1,6 @@
 // Función para cargar las categorías
 function cargarCategorias() {
-    fetch('../php/listar_categorias.php')
+    fetch('../controlador/listar_categorias.php')
         .then(response => response.json())
         .then(data => {
             const listaCategorias = document.getElementById('listaCategorias');
@@ -79,7 +79,7 @@ function guardarCategoria() {
 
     console.log('Datos enviados:', requestData); // Registro para depuración
 
-    fetch('../php/categoria.php', {
+    fetch('../controlador/categoria.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ function eliminarCategoria(id) {
 
         console.log('Datos enviados:', requestData); // Registro para depuración
 
-        fetch('../php/categoria.php', {
+        fetch('../controlador/categoria.php', {
             method: 'POST',
             body: JSON.stringify(requestData),
             headers: {

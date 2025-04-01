@@ -1,5 +1,5 @@
 <!-- include -->
-<?php include '../html/navbar.php';?>
+<?php include 'navbar.php';?>
 <!-- Modal para Ver Perfil -->
 <div class="modal fade" id="verPerfilModal" tabindex="-1" aria-labelledby="verPerfilModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <div class="text-center mb-4">
-                    <img src="../imagenes/alejandrafotoperfil.png" class="rounded-circle" alt="Foto de perfil"  style="width: 150px; height: 150px; object-fit: cover;">
+                    <img src="../publico/imagenes/alejandrafotoperfil.png" class="rounded-circle" alt="Foto de perfil"  style="width: 150px; height: 150px; object-fit: cover;">
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -164,19 +164,19 @@
 <div id="productCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../imagenes/imagen1.png" class="d-block w-100" alt="Alejandra Pizarnik">
+            <img src="../publico/imagenes/imagen1.png" class="d-block w-100" alt="Alejandra Pizarnik">
         </div>
         <div class="carousel-item">
-            <img src="../imagenes/imagen2.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
+            <img src="../publico/imagenes/imagen2.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
         </div>
         <div class="carousel-item">
-            <img src="../imagenes/imagen3.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
+            <img src="../publico/imagenes/imagen3.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
         </div>
         <div class="carousel-item">
-            <img src="../imagenes/imagen4.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
+            <img src="../publico/imagenes/imagen4.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
         </div>
         <div class="carousel-item">
-            <img src="../imagenes/imagen5.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
+            <img src="../publico/imagenes/imagen5.png" class="d-block w-100" alt="Poemas de Alejandra Pizarnik">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
@@ -195,7 +195,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card border-pink shadow">
-                    <img src="../imagenes/imagengatito.jpg" class="card-img-top" alt="Alejandra Pizarnik">
+                    <img src="../publico/imagenes/imagengatito.jpg" class="card-img-top" alt="Alejandra Pizarnik">
                     <div class="card-body">
                         <h5 class="card-title text-pink">Alejandra Pizarnik</h5>
                         <p class="card-text text-muted">Poeta y traductora argentina. Su obra, marcada por la intensidad y la introspección, la posiciona como una de las voces más relevantes de la poesía latinoamericana del siglo XX.</p>
@@ -211,11 +211,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="../imagenes/imagenvision.png" class="d-block w-100" alt="Nuestra visión"> <!-- Agrega la extensión correcta -->
+                <img src="../publico/imagenes/imagenvision.png" class="d-block w-100" alt="Nuestra visión"> <!-- Agrega la extensión correcta -->
                 <p>Nuestra visión:...</p>
             </div>
             <div class="col-md-6">
-                <img src="../imagenes/imagenmision.png" class="d-block w-100" alt="Nuestra misión">
+                <img src="../publico/imagenes/imagenmision.png" class="d-block w-100" alt="Nuestra misión">
                 <p>Nuestra misión:...</p>
             </div>
         </div>
@@ -240,14 +240,14 @@
         </div>
 
         <!-- JS de Bootstrap -->
-        <script src="../js/loginscrip.js"></script>
-        <script src="../js/proveedor.js"></script>
-        <script src="../js/categoria.js"></script>
-        <script src="../js/producto.js"></script>
+        <script src="../publico/js/loginscrip.js"></script>
+        <script src="../publico/js/proveedor.js"></script>
+        <script src="../publico/js/categoria.js"></script>
+        <script src="../publico/js/producto.js"></script>
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous'></script> 
         <script>
             document.getElementById('verPerfilModal').addEventListener('show.bs.modal', function (event) {
-                fetch('../php/verperfil.php', {
+                fetch('../controlador/verperfil.php', {
                     method: 'GET',
                     credentials: 'include', // Importante: esto permite enviar las cookies de sesión
                     headers: {

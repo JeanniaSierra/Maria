@@ -1,10 +1,13 @@
 <?php
 header('Content-Type: application/json');
+include '../config/conexion.php';
+
+// Habilitar el registro de errores
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+error_reporting(E_ALL);
 
 try {
-    // Incluir el archivo de conexión
-    include 'conexion.php';
-
     // Consulta para obtener los productos con sus categorías y proveedores
     $query = $pdo->prepare('
     SELECT 
@@ -25,10 +28,18 @@ try {
     $query->execute();
     $productos = $query->fetchAll(PDO::FETCH_ASSOC);
 
-    // Convertir imágenes a base64
+    // Procesar las imágenes
     foreach ($productos as &$producto) {
         if (!empty($producto['imagen_producto'])) {
-            $producto['imagen_producto'] = base64_encode($producto['imagen_producto']);
+            $rutaImagen = "../publico/image/" . $producto['imagen_producto']; // Ruta completa de la imagen
+            if (file_exists($rutaImagen)) {
+                $producto['imagen_producto'] = base64_encode(file_get_contents($rutaImagen)); // Convertir a base64
+            } else {
+                error_log("Imagen no encontrada: " . $rutaImagen); // Registrar error si la imagen no existe
+                $producto['imagen_producto'] = null; // Si no hay imagen
+            }
+        } else {
+            $producto['imagen_producto'] = null; // Si no hay imagen
         }
     }
 
@@ -38,7 +49,7 @@ try {
         'data' => $productos
     ]);
 } catch (PDOException $e) {
-    // Manejo de errores de conexión o consulta
+    error_log("Error al obtener los productos: " . $e->getMessage());
     echo json_encode([
         'success' => false,
         'message' => 'Error al obtener los productos: ' . $e->getMessage()

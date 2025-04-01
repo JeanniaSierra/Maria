@@ -1,6 +1,6 @@
 // Función para cargar los proveedores
 function cargarProveedores() {
-    fetch('../php/listar_proveedores.php')
+    fetch('../controlador/listar_proveedores.php')
         .then(response => response.json())
         .then(data => {
             const listaProveedores = document.getElementById('listaProveedores');
@@ -64,7 +64,7 @@ function guardarProveedor(id = null) {
         telefono: telefono
     };
 
-    fetch('../php/proveedor.php', {
+    fetch('../controlador/proveedor.php', {
         method: 'POST',
         body: JSON.stringify(requestData),
         headers: {
@@ -94,7 +94,7 @@ function eliminarProveedor(id) {
             id: id
         };
 
-        fetch('../php/proveedor.php', {
+        fetch('../controlador/proveedor.php', {
             method: 'POST',
             body: JSON.stringify(requestData),
             headers: {

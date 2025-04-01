@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log('Iniciando registro...'); // Debug
             console.log('Datos del formulario:', Object.fromEntries(formData)); // Debug
 
-            const response = await fetch('../php/registro.php', { // Asegúrate de que la ruta sea correcta
+            const response = await fetch('../controlador/registro.php', { // Asegúrate de que la ruta sea correcta
                 method: 'POST', // Método de la solicitud
                 body: formData, // Datos del formulario
                 headers: {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
             loginMessage.textContent = "Iniciando sesión..."; // Mensaje de carga
             loginMessage.style.color = "blue"; // Cambia el color del mensaje
 
-            const response = await fetch('../php/login.php', { // Asegúrate de que la ruta sea correcta
+            const response = await fetch('../controlador/login.php', { // Asegúrate de que la ruta sea correcta
                 method: 'POST', // Método de la solicitud
                 body: formData, // Datos del formulario
                 credentials: 'include', // Añadir esta línea para manejar sesiones
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 loginMessage.style.color = "green"; // Mensaje de éxito
                 loginMessage.textContent = "¡Inicio de sesión exitoso!";
                 // Redirigir a la página principal o a otra página después de iniciar sesión
-                window.location.href = 'bootstrap.php'; // Cambia esto a la ruta que desees
+                window.location.href = '../vista/bootstrap.php'; // Cambia esto a la ruta que desees
             } else {
                 loginMessage.style.color = "red"; // Mensaje de error
                 loginMessage.textContent = result.message || "Usuario o contraseña incorrectos";
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cerrarSesionBtn.addEventListener('click', function(e) {
             e.preventDefault();
             if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
-                window.location.href = 'login.html';
+                window.location.href = '../vista/login.html';
             }
         });
     }
@@ -197,7 +197,7 @@ function modificarPerfil() {
         rol: document.getElementById("perfilRol").value
     };
 
-    fetch("../php/actualizarperfil.php", {
+    fetch("../controlador/actualizarperfil.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -234,7 +234,7 @@ function guardarCambios() {
         email: inputs[2].value
     };
 
-    fetch('../php/actualizarperfil.php', {
+    fetch('../controlador/actualizarperfil.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

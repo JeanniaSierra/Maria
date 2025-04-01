@@ -1,6 +1,6 @@
 // Función para cargar categorías y proveedores
 function cargarCategoriasYProveedores() {
-    fetch('../php/producto.php')
+    fetch('../controlador/producto.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la respuesta del servidor');
@@ -64,7 +64,7 @@ function guardarProducto(event) {
         'nombreProducto',
         'descripcionProducto',
         'precioProducto',
-        'cantidadProducto', // Agregado para validar cantidad_producto
+        'cantidadProducto',
         'idCategoria',
         'idProveedor'
     ];
@@ -79,12 +79,18 @@ function guardarProducto(event) {
 
     formData.append('action', 'registerProducto');
 
-    fetch('../php/producto.php', {
+    fetch('../controlador/producto.php', {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
+        console.log('Respuesta del servidor:', data); // Depuración
         if (data.success) {
             alert('Producto guardado correctamente');
             form.reset();
@@ -101,24 +107,37 @@ function guardarProducto(event) {
 
 // Función para cargar productos
 function cargarProductos() {
-    fetch('../php/listar_productos.php')
+    fetch('../controlador/listar_productos.php')
         .then(response => {
+            console.log('Estado HTTP:', response.status); // Depuración
             if (!response.ok) {
-                throw new Error('Error en la respuesta del servidor');
+                throw new Error(`Error en la respuesta del servidor. Código de estado: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
+            console.log('Respuesta del servidor:', data); // Depuración
             if (data.success) {
                 const productos = data.data;
                 const tbody = document.getElementById('listaProductos');
+
+                if (!tbody) {
+                    console.error('Elemento con ID "listaProductos" no encontrado en el DOM.');
+                    return;
+                }
+
                 tbody.innerHTML = ''; // Limpiar la tabla antes de llenarla
 
                 productos.forEach(producto => {
+                    console.log('Ruta de la imagen:', producto.imagen_producto); // Depuración de la imagen
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td>${producto.id_producto}</td>
-                        <td><img src="data:image/jpeg;base64,${producto.imagen_producto}" width="50" height="50" alt="Imagen"></td>
+                        <td>
+                            ${producto.imagen_producto 
+                                ? `<img src="data:image/jpeg;base64,${producto.imagen_producto}" width="50" height="50" alt="Imagen">`
+                                : 'Sin imagen'}
+                        </td>
                         <td>${producto.nombre_producto}</td>
                         <td>${producto.descripcion_producto}</td>
                         <td>${producto.precio_producto}</td>
@@ -132,12 +151,10 @@ function cargarProductos() {
                 });
             } else {
                 console.error('Error al cargar productos:', data.message);
-                alert('Error al cargar productos: ' + data.message);
             }
         })
         .catch(error => {
             console.error('Error en la solicitud:', error);
-            alert('Error al cargar productos. Por favor, intente nuevamente.');
         });
 }
 
@@ -150,7 +167,7 @@ window.onload = function() {
 // Función para abrir el modal de edición
 function abrirModalEditar(id) {
     const action = "obtenerProducto";
-    fetch('../php/producto.php', {
+    fetch('../controlador/producto.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, id })
@@ -174,7 +191,7 @@ function editarProducto(id) {
     formData.append('action', action);
     formData.append('id', id);
     
-    fetch('../php/producto.php', {
+    fetch('../controlador/producto.php', {
         method: 'POST',
         body: formData
     })
@@ -190,7 +207,7 @@ function editarProducto(id) {
 function eliminarProducto(id) {
     if (!confirm("¿Seguro que deseas eliminar este producto?")) return;
 
-    fetch('../php/producto.php', {
+    fetch('../controlador/producto.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -219,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ...existing code para manipular el tbody...
     // Ejemplo de manipulación:
-    fetch('../php/listar_productos.php')
+    fetch('../controlador/listar_productos.php')
         .then(response => response.json())
         .then(data => {
             if (!data.success) {

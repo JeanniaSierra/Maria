@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php'; // Asegúrate de que la conexión a la base de datos esté configurada correctamente
+include '../config/conexion.php'; // Asegúrate de que la conexión a la base de datos esté configurada correctamente
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include 'conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
+include '../config/conexion.php'; // Asegúrate de que este archivo esté correctamente configurado
 
 try {
     $sql = "SELECT id_proveedor, nombre_proveedor, direccion_proveedor, telefono_proveedor FROM Proveedor";

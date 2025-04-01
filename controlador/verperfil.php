@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 
 // Aquí deberías incluir la conexión a la base de datos
-include 'conexion.php';
+include '../config/conexion.php';
 
 $id_usuario = $_SESSION['usuario_id'];
 $stmt = $pdo->prepare("SELECT nombre_usuario, apellido_usuario, email_usuario, rol_usuario FROM Usuario WHERE id_usuario = ?");
